@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://player.gd" type="Script" id=2]
+
+[node name="World" type="Node2D"]
+
+[node name="Ground" type="ColorRect" parent="."]
+margin_right = 1036.0
+margin_bottom = 610.0
+color = Color( 0.376471, 0.615686, 0.298039, 1 )
+
+[node name="Player" type="Sprite" parent="."]
+position = Vector2( 432, 242 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+speed = 600.0
+
+[node name="Tree" type="ColorRect" parent="."]
+margin_left = 104.0
+margin_top = 68.0
+margin_right = 144.0
+margin_bottom = 189.0
+color = Color( 0.0470588, 0.294118, 0.00392157, 1 )
+
+[node name="Tree2" type="ColorRect" parent="."]
+margin_left = 233.0
+margin_top = 262.0
+margin_right = 273.0
+margin_bottom = 383.0
+color = Color( 0.0470588, 0.294118, 0.00392157, 1 )
+
+[node name="Tree3" type="ColorRect" parent="."]
+margin_left = 353.0
+margin_top = 27.0
+margin_right = 393.0
+margin_bottom = 148.0
+color = Color( 0.0470588, 0.294118, 0.00392157, 1 )
+
+[node name="Tree4" type="ColorRect" parent="."]
+margin_left = 673.0
+margin_top = 52.0
+margin_right = 713.0
+margin_bottom = 173.0
+color = Color( 0.0470588, 0.294118, 0.00392157, 1 )
+
+[node name="Tree5" type="ColorRect" parent="."]
+margin_left = 915.0
+margin_top = 184.0
+margin_right = 955.0
+margin_bottom = 305.0
+color = Color( 0.0470588, 0.294118, 0.00392157, 1 )
+
+[node name="River" type="ColorRect" parent="."]
+margin_left = -98.0
+margin_top = 425.0
+margin_right = 1134.0
+margin_bottom = 526.0
+rect_rotation = 3.64978
+color = Color( 0.105882, 0.454902, 0.831373, 1 )
