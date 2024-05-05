@@ -1,0 +1,5 @@
+res://default_env.tres
+res://scenes/world.tscn
+res://new_tile_set.tres
+res://scenes/player-character.tscn
+res://scripts/player-character.gd

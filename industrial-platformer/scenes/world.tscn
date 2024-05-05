@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://p5fbksn307cc"]
+
+[ext_resource type="TileSet" uid="uid://pq7ummnepxs4" path="res://new_tile_set.tres" id="1_03jng"]
+[ext_resource type="PackedScene" uid="uid://hmdh5a8aok8j" path="res://scenes/player-character.tscn" id="2_8fu2x"]
+[ext_resource type="Texture2D" uid="uid://bomoyw1mlvxfb" path="res://addons/parallax-pack/game_background_1/layers/sky.png" id="3_movs1"]
+[ext_resource type="Texture2D" uid="uid://db8pyhrk5s2k4" path="res://addons/parallax-pack/game_background_1/layers/rocks_1.png" id="4_4xkgg"]
+[ext_resource type="Texture2D" uid="uid://ubpfsx0tifbu" path="res://addons/parallax-pack/game_background_1/layers/rocks_2.png" id="4_8oneb"]
+[ext_resource type="Texture2D" uid="uid://dai3nx8465tky" path="res://addons/parallax-pack/game_background_1/layers/clouds_1.png" id="6_pl65j"]
+[ext_resource type="Texture2D" uid="uid://l5jx023txlcb" path="res://addons/parallax-pack/game_background_1/layers/clouds_2.png" id="7_gcjfx"]
+[ext_resource type="Texture2D" uid="uid://bl31qyuw64ybc" path="res://addons/parallax-pack/game_background_1/layers/clouds_3.png" id="8_k8afh"]
+[ext_resource type="Texture2D" uid="uid://caprm1iwmatat" path="res://addons/parallax-pack/game_background_1/layers/clouds_4.png" id="9_na4gt"]
+
+[node name="World" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_03jng")
+format = 2
+layer_0/name = "Terrain"
+layer_0/tile_data = PackedInt32Array(458752, 131072, 0, 458753, 131072, 0, 458754, 131072, 0, 524285, 131072, 0, 524286, 131072, 0, 524287, 131072, 0, 589821, 262144, 0, 589822, 262144, 0, 589823, 262144, 0, 524288, 262144, 0, 524289, 262144, 0, 524290, 262144, 0, 524291, 589824, 3, 524292, 589824, 3, 524293, 589824, 3, 524294, 589824, 3, 655357, 262144, 1, 655358, 262144, 1, 655359, 262144, 1, 589824, 262144, 1, 589825, 262144, 1, 589826, 262144, 1, 589827, 262144, 1, 589828, 262144, 1, 589829, 262144, 1, 589830, 262144, 1, 458756, 393216, 3, 458757, 458752, 3, 458758, 524288, 3, 458761, 131072, 0, 458762, 131072, 0, 458763, 131072, 0, 458764, 131072, 0, 65549, 262144, 3, 131085, 262144, 3, 196621, 262144, 3, 262157, 262144, 3, 327693, 262144, 3, 393229, 262144, 3, 13, 262144, 2, 458765, 131072, 0, 458766, 131072, 0, 458767, 131072, 0, 524297, 262144, 0, 589833, 262144, 0, 524298, 262144, 0, 589834, 262144, 0, 524299, 262144, 0, 589835, 262144, 0, 524300, 262144, 0, 589836, 262144, 0, 524301, 262144, 0, 589837, 262144, 0, 524302, 262144, 0, 589838, 262144, 0, 524303, 262144, 0, 589839, 262144, 0, 14, 65536, 0, 15, 131072, 0, 16, 131072, 0, 17, 196608, 0, 65550, 262144, 0, 65551, 262144, 0, 65552, 262144, 0, 65553, 262144, 0, 6, 131072, 0, 7, 131072, 0, 8, 131072, 0, 9, 131072, 0, 10, 131072, 0, 11, 131072, 0, 12, 196608, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 2, 65536, 0, 65538, 262144, 1, 65539, 262144, 1, 65540, 262144, 1, 65541, 262144, 1, 65542, 262144, 1, 65543, 262144, 1, 65544, 262144, 1, 65545, 262144, 1, 65546, 262144, 1, 65547, 262144, 1, 65548, 262144, 1, 65536, 262144, 1, 65537, 262144, 1, 0, 720896, 0, 1, 720896, 0, 65535, 196608, 0, 65533, 131072, 0, 65534, 131072, 0, 65532, 131072, 0, 65531, 262144, 0, -5, 262144, 0, -196613, 262144, 0, -131077, 262144, 0, -65541, 262144, 0, 131088, 262144, 0, 196624, 262144, 0, 262160, 262144, 0, 327696, 262144, 0, 393232, 262144, 0, 458768, 262144, 0, -393198, 262144, 0, -327662, 262144, 0, -262126, 262144, 0, -196590, 262144, 0, -131054, 262144, 0, -65518, 262144, 0, 18, 262144, 0, 65554, 262144, 0, -327685, 262144, 0, -262149, 262144, 0, -393216, 393216, 3, -393215, 458752, 3, -393214, 524288, 3, -393211, 393216, 3, -393210, 458752, 3, -393209, 524288, 3, -458743, 393216, 3, -458742, 458752, 3, -458741, 524288, 3, -524274, 65536, 0, -524273, 131072, 0, -524272, 131072, 0, -524271, 131072, 0, -458734, 262144, 0, -524270, 262144, 0, -589806, 262144, 0, -655342, 262144, 0, -720878, 262144, 0, -786414, 262144, 0, -393221, 262144, 0, -458757, 262144, 0, -524293, 262144, 0, -589829, 262144, 0, -655365, 262144, 0, -720901, 262144, 0, -786437, 262144, 0, -851973, 262144, 0, -917509, 262144, 0, -917508, 262144, 0, -917507, 262144, 0, -917506, 262144, 0, -917505, 262144, 0, -983040, 262144, 0, -983039, 262144, 0, -983038, 262144, 0, -983037, 262144, 0, -983036, 262144, 0, -983035, 262144, 0, -983034, 262144, 0, -983033, 262144, 0, -983032, 262144, 0, -983031, 262144, 0, -983030, 262144, 0, -983029, 262144, 0, -983028, 262144, 0, -983027, 262144, 0, -983026, 262144, 0, -983025, 262144, 0, -983024, 262144, 0, -983023, 262144, 0, -983022, 262144, 0, -917486, 262144, 0, -851950, 262144, 0, -851972, 589824, 2, -851971, 589824, 2, -851970, 589824, 2, -851969, 589824, 2, -917504, 589824, 2, -917503, 589824, 2, -917502, 589824, 2, -917501, 589824, 2, -917500, 589824, 2, -917499, 589824, 2, -917498, 589824, 2, -917497, 589824, 2, -917496, 589824, 2, -917495, 589824, 2, -917494, 589824, 2, -917493, 589824, 2, -917492, 589824, 2, -917491, 589824, 2, -917490, 589824, 2, -917489, 589824, 2, -917488, 589824, 2, -917487, 589824, 2)
+layer_1/name = "Details Back"
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(262155, 851968, 5, 196619, 851968, 5, 327691, 851968, 5, 327682, 196608, 3, -65525, 0, 7, -131061, 65536, 7, -196597, 65536, 6, -65528, 0, 7, -131064, 0, 6, -196600, 65536, 7, -262136, 65536, 6, 327685, 131072, 5, 327686, 196608, 5, 327687, 262144, 5, -131060, 196608, 3, -131065, 196608, 3, -65521, 458752, 7, 393231, 524288, 6, -4, 458752, 6, -65527, 393216, 6)
+layer_2/name = "Details Front"
+layer_2/z_index = 3
+layer_2/tile_data = PackedInt32Array(458754, 458752, 4, 458753, 458752, 4, 458752, 458752, 4, 458761, 458752, 4, 458762, 458752, 4, 458763, 458752, 4, -65527, 393216, 6, -65521, 458752, 7, -4, 458752, 6, 393231, 524288, 6, 327685, 589824, 7, 327686, 589824, 7, 327687, 589824, 7, -131060, 196608, 3, -131065, 196608, 3, 131073, 589824, 7, 131074, 589824, 7, 196610, 589824, 7, 262146, 589824, 7, 196609, 589824, 7, 327682, 589824, 7, 393218, 589824, 7, 393217, 589824, 7, 327681, 589824, 7, 262145, 589824, 7, 262147, 589824, 7, 327683, 589824, 7, 393219, 589824, 7, 393220, 589824, 7, 393221, 589824, 7, 393222, 589824, 7, 393223, 589824, 7, 393224, 589824, 7, 393225, 589824, 7, 393226, 589824, 7, 327690, 589824, 7, 262154, 589824, 7, 196618, 589824, 7, 131082, 589824, 7, 131081, 589824, 7, 131080, 589824, 7, 131079, 589824, 7, 131078, 589824, 7, 131077, 589824, 7, 131076, 589824, 7, 131075, 589824, 7, 196611, 589824, 7, 196612, 589824, 7, 196613, 589824, 7, 196614, 589824, 7, 196615, 589824, 7, 196616, 589824, 7, 196617, 589824, 7, 262153, 589824, 7, 327689, 589824, 7, 327688, 589824, 7, 327684, 589824, 7, 262148, 589824, 7, 262149, 589824, 7, 262150, 589824, 7, 262151, 589824, 7, 262152, 589824, 7, 458755, 589824, 7, 524291, 589824, 7, 524292, 589824, 7, 524293, 589824, 7, 524294, 589824, 7, 524295, 589824, 7, 524296, 589824, 7, 458760, 589824, 7, 458759, 589824, 7, 458758, 589824, 7, 458757, 589824, 7, 458756, 589824, 7, 589831, 589824, 7, 589832, 589824, 7)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_8fu2x")]
+position = Vector2(-119, 245)
+motion_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(0.6, 0.6)
+transform = Transform2D(0.6, 0, 0, 0.6, 0, 0)
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/Sky"]
+texture = ExtResource("3_movs1")
+centered = false
+
+[node name="Clouds_1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/Clouds_1"]
+texture = ExtResource("6_pl65j")
+centered = false
+
+[node name="Clouds_2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.15, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/Clouds_2"]
+texture = ExtResource("7_gcjfx")
+centered = false
+
+[node name="Clouds_3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/Clouds_3"]
+texture = ExtResource("8_k8afh")
+centered = false
+
+[node name="Clouds_4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/Clouds_4"]
+texture = ExtResource("9_na4gt")
+centered = false
+
+[node name="Rocks_1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/Rocks_1"]
+texture = ExtResource("4_4xkgg")
+centered = false
+
+[node name="Rocks_2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite" type="Sprite2D" parent="ParallaxBackground/Rocks_2"]
+texture = ExtResource("4_8oneb")
+centered = false
