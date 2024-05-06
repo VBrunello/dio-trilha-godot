@@ -14,6 +14,8 @@ var isAttacking: bool = false
 var isTimerEnded: bool = false
 
 func _process(delta):
+	GameManager.playerPosition = position
+	
 	_read_input()
 	_rotate_sprite()
 	_play_run_idle_animation()
