@@ -1,19 +1,26 @@
+class_name Player
 extends CharacterBody2D
 
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var attackCooldown: Timer = $attackCD
 @onready var swordArea: Area2D = $SwordArea
+@onready var hitBoxArea: Area2D = $HitboxArea
+@onready var hitBoxCooldown: Timer = $HitboxCooldown
 
 @export var speed: float = 300
 @export var lerpFactor: float = 0.05
 @export var swordDamage: int = 2
+@export var deathPrefab: PackedScene
+@export var health: int = 100
+@export var maxHealth: int = 100
 
 var inputVector: Vector2 = Vector2(0, 0)
 var isRunning: bool = false
 var wasRunning: bool = false
 var isAttacking: bool = false
 var isTimerEnded: bool = false
+var canBeDamaged: bool = true
 
 func _process(_delta):
 	GameManager.playerPosition = position
@@ -34,6 +41,22 @@ func _process(_delta):
 			isRunning = false
 			isTimerEnded = false
 			animationPlayer.play("knight_idle")
+	
+	#Processar Dano
+	if canBeDamaged:
+		_update_hitbox_detection()
+
+func _update_hitbox_detection():
+	var bodies = hitBoxArea.get_overlapping_bodies()
+	for body in bodies:
+		if body.is_in_group("enemies"):
+			var enemy: Enemy = body
+			var damage_amount = 1
+			_damage(damage_amount)
+			print("Tomei dano")
+	
+	canBeDamaged = false
+	hitBoxCooldown.start()
 
 func _physics_process(_delta):
 	_movement()
@@ -101,3 +124,33 @@ func _rotate_sprite():
 
 func _on_attack_cd_timeout():
 	isTimerEnded = true
+
+func _damage(amount: int):
+	if health <= 0: return
+	health -= amount
+	
+	modulate = Color.RED
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN)
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.tween_property(self, "modulate", Color.WHITE, 0.3)
+	
+	if health <= 0:
+		_die()
+
+func _die():
+	if deathPrefab:
+		var deathObject = deathPrefab.instantiate()
+		get_parent().add_child(deathObject)
+		deathObject.position = position
+	queue_free()
+
+
+func _on_hitbox_cooldown_timeout():
+	canBeDamaged = true
+
+func _heal(amount: int):
+	health += amount
+	if health > maxHealth:
+		health = maxHealth
+	return health

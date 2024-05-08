@@ -2,11 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://cy0iyw0wf0vek" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_pgj5c"]
 [ext_resource type="PackedScene" uid="uid://csh12euvfrdw" path="res://scenes/player.tscn" id="2_f0jre"]
-[ext_resource type="PackedScene" uid="uid://ddqic32ioffpx" path="res://scenes/pawn.tscn" id="3_rslrn"]
+[ext_resource type="PackedScene" uid="uid://6xk3wjt81dl4" path="res://scenes/mob_spawner.tscn" id="3_fho87"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="WarriorPurple" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1225, 201)
 texture = ExtResource("1_pgj5c")
 
@@ -75,13 +76,6 @@ scale = Vector2(1.99546, 1.94765)
 text = "Attack up 2"
 
 [node name="Player" parent="." instance=ExtResource("2_f0jre")]
-position = Vector2(242, 253)
+position = Vector2(593, 347)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_rslrn")]
-position = Vector2(171, 470)
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("3_rslrn")]
-position = Vector2(451, 97)
-
-[node name="CharacterBody2D3" parent="." instance=ExtResource("3_rslrn")]
-position = Vector2(84, 85)
+[node name="ModSpawner" parent="." instance=ExtResource("3_fho87")]

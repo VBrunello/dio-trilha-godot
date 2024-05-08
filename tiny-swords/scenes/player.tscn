@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://csh12euvfrdw"]
+[gd_scene load_steps=16 format=3 uid="uid://csh12euvfrdw"]
 
 [ext_resource type="Texture2D" uid="uid://cy0iyw0wf0vek" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_48yyx"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j4d40"]
@@ -252,10 +252,14 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_14rl7"]
 radius = 109.005
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_grlie"]
+radius = 46.0435
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_j4d40")
 lerpFactor = 0.1
+health = 90
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -32)
@@ -285,4 +289,16 @@ position = Vector2(0, -34)
 shape = SubResource("CircleShape2D_14rl7")
 debug_color = Color(0.995339, 0, 0.206971, 0.42)
 
+[node name="HitboxArea" type="Area2D" parent="."]
+position = Vector2(-1, -29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea"]
+shape = SubResource("CircleShape2D_grlie")
+debug_color = Color(0.096142, 0.648469, 1.92523e-07, 0.42)
+
+[node name="HitboxCooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="timeout" from="attackCD" to="." method="_on_attack_cd_timeout"]
+[connection signal="timeout" from="HitboxCooldown" to="." method="_on_hitbox_cooldown_timeout"]

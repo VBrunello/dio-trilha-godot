@@ -1,6 +1,6 @@
 extends Node
 
-@export var speed: float = 100
+@export var speed: float = 1
 
 var sprite: AnimatedSprite2D
 var enemy: Enemy
@@ -18,7 +18,7 @@ func _physics_process(_delta):
 	inputVector = difference.normalized()
 	
 	# Movimento
-	enemy.velocity = inputVector * speed
+	enemy.velocity = inputVector * speed * 100
 	enemy.move_and_slide()
 	
 	# Girar sprite
