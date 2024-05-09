@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://crym2foxm26bu"]
+[gd_scene load_steps=5 format=3 uid="uid://crym2foxm26bu"]
 
 [ext_resource type="Texture2D" uid="uid://cy0iyw0wf0vek" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_pgj5c"]
 [ext_resource type="PackedScene" uid="uid://csh12euvfrdw" path="res://scenes/player.tscn" id="2_f0jre"]
 [ext_resource type="PackedScene" uid="uid://6xk3wjt81dl4" path="res://scenes/mob_spawner.tscn" id="3_fho87"]
+[ext_resource type="PackedScene" uid="uid://ctvnvmow284fe" path="res://scenes/ritual.tscn" id="4_txf6v"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -79,3 +80,5 @@ text = "Attack up 2"
 position = Vector2(593, 347)
 
 [node name="ModSpawner" parent="." instance=ExtResource("3_fho87")]
+
+[node name="Ritual" parent="." instance=ExtResource("4_txf6v")]

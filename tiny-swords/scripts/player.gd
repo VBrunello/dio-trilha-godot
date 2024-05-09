@@ -8,9 +8,19 @@ extends CharacterBody2D
 @onready var hitBoxArea: Area2D = $HitboxArea
 @onready var hitBoxCooldown: Timer = $HitboxCooldown
 
+@export_category("Movement")
 @export var speed: float = 300
 @export var lerpFactor: float = 0.05
+
+@export_category("Sword")
 @export var swordDamage: int = 2
+
+@export_category("Ritual")
+@export var ritualDamage: int = 1
+@export var ritualInterval: float = 30
+@export var ritualScene: PackedScene
+
+@export_category("Health")
 @export var deathPrefab: PackedScene
 @export var health: int = 100
 @export var maxHealth: int = 100
@@ -21,8 +31,9 @@ var wasRunning: bool = false
 var isAttacking: bool = false
 var isTimerEnded: bool = false
 var canBeDamaged: bool = true
+var ritualCooldown: float = 0.0
 
-func _process(_delta):
+func _process(delta):
 	GameManager.playerPosition = position
 	
 	_read_input()
@@ -45,6 +56,20 @@ func _process(_delta):
 	#Processar Dano
 	if canBeDamaged:
 		_update_hitbox_detection()
+	
+	# Ritual
+	_update_ritual(delta)
+	
+
+func _update_ritual(delta: float):
+	ritualCooldown -= delta
+	if ritualCooldown > 0: return
+	ritualCooldown = ritualInterval
+	
+	# Criar ritual
+	var ritual = ritualScene.instantiate()
+	ritual.damageAmount = ritualDamage
+	add_child(ritual)
 
 func _update_hitbox_detection():
 	var bodies = hitBoxArea.get_overlapping_bodies()

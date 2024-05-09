@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://csh12euvfrdw"]
+[gd_scene load_steps=18 format=3 uid="uid://csh12euvfrdw"]
 
 [ext_resource type="Texture2D" uid="uid://cy0iyw0wf0vek" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_48yyx"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j4d40"]
+[ext_resource type="PackedScene" uid="uid://ctvnvmow284fe" path="res://scenes/ritual.tscn" id="2_77vdi"]
+[ext_resource type="PackedScene" uid="uid://bqromhmtue06p" path="res://scenes/skull.tscn" id="3_j1av6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h28wh"]
 radius = 16.0
@@ -259,6 +261,8 @@ radius = 46.0435
 motion_mode = 1
 script = ExtResource("1_j4d40")
 lerpFactor = 0.1
+ritualScene = ExtResource("2_77vdi")
+deathPrefab = ExtResource("3_j1av6")
 health = 90
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
