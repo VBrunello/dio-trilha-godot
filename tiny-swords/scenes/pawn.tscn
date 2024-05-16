@@ -78,3 +78,6 @@ shape = SubResource("CapsuleShape2D_4b6fs")
 [node name="FollowPlayer" type="Node" parent="."]
 script = ExtResource("1_mascs")
 speed = 0.6
+
+[node name="DamageDigitMarker" type="Marker2D" parent="."]
+position = Vector2(0, -54)

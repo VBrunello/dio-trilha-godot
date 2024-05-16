@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var swordArea: Area2D = $SwordArea
 @onready var hitBoxArea: Area2D = $HitboxArea
 @onready var hitBoxCooldown: Timer = $HitboxCooldown
+@onready var healthProgressBar: ProgressBar = $HealthProgressBar
 
 @export_category("Movement")
 @export var speed: float = 300
@@ -60,6 +61,8 @@ func _process(delta):
 	# Ritual
 	_update_ritual(delta)
 	
+	healthProgressBar.max_value = maxHealth
+	healthProgressBar.value = health
 
 func _update_ritual(delta: float):
 	ritualCooldown -= delta
