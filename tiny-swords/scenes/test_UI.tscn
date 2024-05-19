@@ -1,80 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dccvwsnmy37en"]
+[gd_scene load_steps=3 format=3 uid="uid://dccvwsnmy37en"]
 
 [ext_resource type="PackedScene" uid="uid://csh12euvfrdw" path="res://scenes/player.tscn" id="1_a3n76"]
-[ext_resource type="Texture2D" uid="uid://dltf0gsoa1s1r" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="2_wh6y2"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1dsaq"]
-texture = ExtResource("2_wh6y2")
-texture_margin_left = 96.0
-texture_margin_top = 16.0
-texture_margin_right = 96.0
-texture_margin_bottom = 48.0
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-region_rect = Rect2(32, 48, 128, 128)
-
-[sub_resource type="LabelSettings" id="LabelSettings_byg35"]
-font_size = 17
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://bwbavnxiu6rvh" path="res://scenes/ui/game_ui.tscn" id="2_7ba7l"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_a3n76")]
 position = Vector2(579, 352)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TimerLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.494
-anchor_right = 0.494
-offset_left = -48.088
-offset_top = 18.0
-offset_right = 48.912
-offset_bottom = 41.0
-grow_horizontal = 0
-text = "20:00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Panel2" type="Panel" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -279.0
-offset_bottom = 106.0
-grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_1dsaq")
-
-[node name="GoldLabel" type="Label" parent="CanvasLayer/Panel2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 21.5
-offset_top = -25.0
-offset_right = 118.5
-offset_bottom = -2.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "20000 Gold
-"
-label_settings = SubResource("LabelSettings_byg35")
-
-[node name="MeatLabel" type="Label" parent="CanvasLayer/Panel2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -111.5
-offset_top = -25.0
-offset_right = -14.5
-offset_bottom = -2.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "30 Meat"
-label_settings = SubResource("LabelSettings_byg35")
+[node name="GameUI" parent="." instance=ExtResource("2_7ba7l")]

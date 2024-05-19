@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwbavnxiu6rvh"]
+
+[ext_resource type="Texture2D" uid="uid://dltf0gsoa1s1r" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="1_asbga"]
+[ext_resource type="Script" path="res://scenes/ui/game_ui.gd" id="1_nxbcx"]
+[ext_resource type="Texture2D" uid="uid://uw16pplvplky" path="res://addons/Tiny Swords/Resources/Resources/M_Idle_(NoShadow).png" id="3_2iwen"]
+[ext_resource type="PackedScene" uid="uid://bdj1iqismvdjo" path="res://scenes/meat.tscn" id="4_75vpd"]
+[ext_resource type="PackedScene" uid="uid://csh12euvfrdw" path="res://scenes/player.tscn" id="5_7prfr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1dsaq"]
+texture = ExtResource("1_asbga")
+texture_margin_left = 96.0
+texture_margin_top = 16.0
+texture_margin_right = 96.0
+texture_margin_bottom = 48.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 48, 128, 128)
+
+[sub_resource type="SystemFont" id="SystemFont_523r1"]
+font_names = PackedStringArray("Impact")
+font_weight = 425
+
+[sub_resource type="LabelSettings" id="LabelSettings_byg35"]
+font = SubResource("SystemFont_523r1")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqiv1"]
+atlas = ExtResource("3_2iwen")
+region = Rect2(40, 40, 56, 56)
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_nxbcx")
+
+[node name="TimerLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.494
+anchor_right = 0.494
+offset_left = -48.088
+offset_top = 18.0
+offset_right = 48.912
+offset_bottom = 41.0
+grow_horizontal = 0
+text = "20:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -207.0
+offset_bottom = 81.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_1dsaq")
+
+[node name="MeatLabel" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.5
+offset_top = -35.5
+offset_right = 86.5
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_byg35")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel2"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = -12.0
+offset_right = 99.0
+offset_bottom = 44.0
+texture = SubResource("AtlasTexture_oqiv1")
+
+[node name="Meat" parent="." instance=ExtResource("4_75vpd")]
+position = Vector2(575, 385)
+
+[node name="Meat2" parent="." instance=ExtResource("4_75vpd")]
+position = Vector2(270, 542)
+
+[node name="Meat3" parent="." instance=ExtResource("4_75vpd")]
+position = Vector2(880, 536)
+
+[node name="Player" parent="." instance=ExtResource("5_7prfr")]
+position = Vector2(441, 358)

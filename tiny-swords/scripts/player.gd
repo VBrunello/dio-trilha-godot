@@ -34,6 +34,11 @@ var isTimerEnded: bool = false
 var canBeDamaged: bool = true
 var ritualCooldown: float = 0.0
 
+signal meatCollected(value: int)
+
+func _ready():
+	GameManager.player = self
+
 func _process(delta):
 	GameManager.playerPosition = position
 	
