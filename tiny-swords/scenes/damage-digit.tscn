@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cuac3jkq75dx8"]
 
-[ext_resource type="Script" path="res://scenes/damage-digit.gd" id="1_k05yo"]
+[ext_resource type="Script" path="res://scripts/damage-digit.gd" id="1_k05yo"]
 
 [sub_resource type="SystemFont" id="SystemFont_400pr"]
 font_names = PackedStringArray("Roboto")

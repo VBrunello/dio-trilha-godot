@@ -55,9 +55,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4b6fs"]
-radius = 20.0
-height = 50.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_x0kty"]
+radius = 15.0333
 
 [node name="Pawn" type="CharacterBody2D" groups=["enemies"]]
 motion_mode = 1
@@ -72,8 +71,8 @@ autoplay = "default"
 frame_progress = 0.605543
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -27)
-shape = SubResource("CapsuleShape2D_4b6fs")
+position = Vector2(0, -13)
+shape = SubResource("CircleShape2D_x0kty")
 
 [node name="FollowPlayer" type="Node" parent="."]
 script = ExtResource("1_mascs")

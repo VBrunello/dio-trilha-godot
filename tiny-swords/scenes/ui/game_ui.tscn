@@ -1,10 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwbavnxiu6rvh"]
+[gd_scene load_steps=8 format=3 uid="uid://bwbavnxiu6rvh"]
 
 [ext_resource type="Texture2D" uid="uid://dltf0gsoa1s1r" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="1_asbga"]
 [ext_resource type="Script" path="res://scenes/ui/game_ui.gd" id="1_nxbcx"]
 [ext_resource type="Texture2D" uid="uid://uw16pplvplky" path="res://addons/Tiny Swords/Resources/Resources/M_Idle_(NoShadow).png" id="3_2iwen"]
-[ext_resource type="PackedScene" uid="uid://bdj1iqismvdjo" path="res://scenes/meat.tscn" id="4_75vpd"]
-[ext_resource type="PackedScene" uid="uid://csh12euvfrdw" path="res://scenes/player.tscn" id="5_7prfr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1dsaq"]
 texture = ExtResource("1_asbga")
@@ -81,15 +79,3 @@ offset_top = -12.0
 offset_right = 99.0
 offset_bottom = 44.0
 texture = SubResource("AtlasTexture_oqiv1")
-
-[node name="Meat" parent="." instance=ExtResource("4_75vpd")]
-position = Vector2(575, 385)
-
-[node name="Meat2" parent="." instance=ExtResource("4_75vpd")]
-position = Vector2(270, 542)
-
-[node name="Meat3" parent="." instance=ExtResource("4_75vpd")]
-position = Vector2(880, 536)
-
-[node name="Player" parent="." instance=ExtResource("5_7prfr")]
-position = Vector2(441, 358)
