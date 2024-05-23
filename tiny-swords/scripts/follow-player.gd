@@ -12,6 +12,8 @@ func _ready():
 	pass
 
 func _physics_process(_delta):
+	if GameManager.isGameOver: return
+	
 	# Calcular direção
 	var playerPosition: Vector2 = GameManager.playerPosition
 	var difference = playerPosition - enemy.position

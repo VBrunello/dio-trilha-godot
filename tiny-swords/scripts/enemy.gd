@@ -46,6 +46,9 @@ func _die():
 		get_parent().add_child(deathObject)
 		deathObject.position = position
 	
+	# Incrementar contador
+	GameManager.monsterDefeatedCounter += 1
+	
 	# Drop
 	if randf() <= dropChance:
 		_drop_item()

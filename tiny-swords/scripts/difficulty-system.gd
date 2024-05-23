@@ -9,6 +9,8 @@ extends Node
 var time = 0.0
 
 func _process(delta):
+	if GameManager.isGameOver: return
+	
 	time += delta
 	
 	# Dificuldade linear 

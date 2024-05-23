@@ -10,6 +10,8 @@ var cooldown = 0.0
 
 
 func _process(delta):
+	if GameManager.isGameOver: return
+	
 	cooldown -= delta
 	if cooldown > 0: return
 	

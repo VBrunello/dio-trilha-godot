@@ -37,7 +37,8 @@ var ritualCooldown: float = 0.0
 signal meatCollected(value: int)
 
 func _ready():
-	GameManager.player = self
+	GameManager.player = self 
+	meatCollected.connect(func(value: int): GameManager.meatCounter += 1)
 
 func _process(delta):
 	GameManager.playerPosition = position
@@ -172,6 +173,7 @@ func _damage(amount: int):
 		_die()
 
 func _die():
+	GameManager._end_game()
 	if deathPrefab:
 		var deathObject = deathPrefab.instantiate()
 		get_parent().add_child(deathObject)
