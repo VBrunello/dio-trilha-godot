@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var hitBoxArea: Area2D = $HitboxArea
 @onready var hitBoxCooldown: Timer = $HitboxCooldown
 @onready var healthProgressBar: ProgressBar = $HealthProgressBar
+@onready var ritualProgressBar: ProgressBar = $RitualProgressBar
 @onready var audioPlayer: Node = $"../AudioManager"
 
 @export_category("Movement")
@@ -74,6 +75,8 @@ func _process(delta):
 	
 	healthProgressBar.max_value = maxHealth
 	healthProgressBar.value = health
+	ritualProgressBar.max_value = ritualInterval
+	ritualProgressBar.value = ritualCooldown
 
 func _update_ritual(delta: float):
 	ritualCooldown -= delta

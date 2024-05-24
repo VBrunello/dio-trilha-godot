@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://csh12euvfrdw"]
+[gd_scene load_steps=22 format=3 uid="uid://csh12euvfrdw"]
 
 [ext_resource type="Texture2D" uid="uid://cy0iyw0wf0vek" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_48yyx"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j4d40"]
@@ -256,11 +256,17 @@ radius = 109.005
 [sub_resource type="CircleShape2D" id="CircleShape2D_grlie"]
 radius = 46.0435
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_386r2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0ptk"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbmeu"]
+bg_color = Color(0.956863, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_386r2"]
+bg_color = Color(0, 0, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7ykp"]
-bg_color = Color(0.870387, 1.44392e-06, 1.2514e-06, 1)
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
@@ -314,9 +320,21 @@ offset_top = 4.0
 offset_right = 71.0
 offset_bottom = 23.0
 scale = Vector2(0.810723, 0.519761)
+theme_override_styles/background = SubResource("StyleBoxFlat_j0ptk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hbmeu")
+rounded = true
+show_percentage = false
+
+[node name="RitualProgressBar" type="ProgressBar" parent="."]
+offset_left = -48.0
+offset_top = 14.0
+offset_right = 71.0
+offset_bottom = 33.0
+scale = Vector2(0.810723, 0.519761)
 theme_override_styles/background = SubResource("StyleBoxFlat_386r2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_h7ykp")
 rounded = true
+fill_mode = 1
 show_percentage = false
 
 [connection signal="timeout" from="attackCD" to="." method="_on_attack_cd_timeout"]

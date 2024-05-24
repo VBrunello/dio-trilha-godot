@@ -21,6 +21,7 @@ func _ready():
 func _damage(amount: int):
 	health -= amount
 	var playSound = audioPlayer.get_child(2)
+	playSound.pitch_scale = randf_range(1.0, 2.0)
 	playSound.play(0.0)
 	
 	modulate = Color.RED
