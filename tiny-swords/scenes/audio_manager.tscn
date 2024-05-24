@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://8aftu6jbmgt6"]
+
+[ext_resource type="AudioStream" uid="uid://cbrlc1phsow1k" path="res://sounds/pickup-meat.wav" id="1_2vnm0"]
+[ext_resource type="AudioStream" uid="uid://dh1j4chj0d71t" path="res://sounds/hit-hurt-player.wav" id="2_pdlxf"]
+[ext_resource type="AudioStream" uid="uid://5yme3c3txfyq" path="res://sounds/hit-hurt-enemy.wav" id="3_e7820"]
+
+[node name="AudioManager" type="Node"]
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_2vnm0")
+
+[node name="DamagePlayerSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pdlxf")
+
+[node name="DamageEnemySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_e7820")

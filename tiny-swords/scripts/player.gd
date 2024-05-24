@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var hitBoxArea: Area2D = $HitboxArea
 @onready var hitBoxCooldown: Timer = $HitboxCooldown
 @onready var healthProgressBar: ProgressBar = $HealthProgressBar
+@onready var audioPlayer: Node = $"../AudioManager"
 
 @export_category("Movement")
 @export var speed: float = 300
@@ -34,11 +35,15 @@ var isTimerEnded: bool = false
 var canBeDamaged: bool = true
 var ritualCooldown: float = 0.0
 
+var damageSound
+var magicSound
+
 signal meatCollected(value: int)
 
 func _ready():
 	GameManager.player = self 
 	meatCollected.connect(func(value: int): GameManager.meatCounter += 1)
+	damageSound = audioPlayer.get_child(1)
 
 func _process(delta):
 	GameManager.playerPosition = position
@@ -162,6 +167,7 @@ func _on_attack_cd_timeout():
 func _damage(amount: int):
 	if health <= 0: return
 	health -= amount
+	damageSound.play(0.0)
 	
 	modulate = Color.RED
 	var tween = create_tween()
@@ -189,3 +195,5 @@ func _heal(amount: int):
 	if health > maxHealth:
 		health = maxHealth
 	return health
+
+

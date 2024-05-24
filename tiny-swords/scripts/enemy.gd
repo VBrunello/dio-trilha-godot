@@ -2,6 +2,7 @@ class_name Enemy
 extends Node2D
 
 @onready var damageDigitMarker = $DamageDigitMarker
+@onready var audioPlayer: Node = $"../AudioManager"
 
 @export_category("Life and Damage")
 @export var deathPrefab: PackedScene
@@ -19,6 +20,8 @@ func _ready():
 
 func _damage(amount: int):
 	health -= amount
+	var playSound = audioPlayer.get_child(2)
+	playSound.play(0.0)
 	
 	modulate = Color.RED
 	var tween = create_tween()
