@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cmtfukocuu7yt"]
+[gd_scene load_steps=33 format=3 uid="uid://cmtfukocuu7yt"]
 
 [ext_resource type="PackedScene" uid="uid://csh12euvfrdw" path="res://scenes/player.tscn" id="1_niypv"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_xgqmd"]
@@ -18,7 +18,6 @@
 [ext_resource type="Script" path="res://scripts/difficulty-system.gd" id="14_5afpn"]
 [ext_resource type="Texture2D" uid="uid://v2xfa44rfgst" path="res://addons/Tiny Swords/Deco/09.png" id="14_8rboc"]
 [ext_resource type="PackedScene" uid="uid://dxntgoex1mf1b" path="res://scenes/tree.tscn" id="16_wo0f3"]
-[ext_resource type="PackedScene" uid="uid://bdj1iqismvdjo" path="res://scenes/meat.tscn" id="19_nybqk"]
 [ext_resource type="PackedScene" uid="uid://8aftu6jbmgt6" path="res://scenes/audio_manager.tscn" id="20_m172c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08jpo"]
@@ -149,6 +148,7 @@ layer_2/tile_data = PackedInt32Array(1310684, 262144, 0, 1572828, 262144, 0, 196
 
 [node name="Player" parent="." instance=ExtResource("1_niypv")]
 position = Vector2(586, 354)
+ritualDamage = 3
 
 [node name="RemoteTransform2D - Camera" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
@@ -272,8 +272,5 @@ position = Vector2(3973, 619)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_gfcuo")
 debug_color = Color(0.994312, 0, 0.224103, 0.42)
-
-[node name="Meat" parent="." instance=ExtResource("19_nybqk")]
-position = Vector2(708, 439)
 
 [node name="AudioManager" parent="." instance=ExtResource("20_m172c")]
